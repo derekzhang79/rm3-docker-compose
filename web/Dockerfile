@@ -8,6 +8,9 @@ RUN apt-get update && apt-get install -y postgresql-client-9.4
 
 RUN apt-get -y install librsvg2-dev postgresql-client-9.4 libpq5 libpq-dev
 
+RUN echo 'postgres:5432:*:wirehead:rm3test' > ~/.pgpass
+RUN chmod 0600 ~/.pgpass
+
 RUN mkdir /src
 
 WORKDIR /src

@@ -1,0 +1,25 @@
+web:
+  build: ./web
+  ports:
+    - "4000:4000"
+  links:
+    - "postgres:postgres"
+#  command: nodemon -L app/bin/www
+  command: node /src/node_modules/rm3/lib/front.js
+  environment:
+    RM3_PG: postgresql://wirehead:rm3test@postgres/rm3test 
+
+postgres:
+  image: postgres
+  volumes_from:
+    - data
+  environment:
+    POSTGRES_PASSWORD: rm3test
+    POSTGRES_USER: wirehead
+
+data:
+  restart: always
+  image: postgres
+  volumes:
+    - /var/lib/postgresql
+  command: "true"

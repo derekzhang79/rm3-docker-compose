@@ -38,6 +38,7 @@ How to get started?
   - Wait a few minutes for postgres to get started up.
   - Run the setup: `docker-compose run web /src/setup.sh`
   - Start everything up: `docker-compose up -d`
+  - Default username is `wirehead`, password is `password`.
 - Other useful operations
  - `docker-compose stop` to shut things down
  - `docker-compose run web bash` to open a bash terminal so you can run CLI.

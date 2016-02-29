@@ -9,6 +9,21 @@ web:
     RM3_PG: postgresql://wirehead:rm3test@postgres/rm3test
     RM3_RESOURCES: /src/node_modules/rm3/scheme/default/static/
 
+#web-dev:
+#  build: ./web-dev
+#  ports:
+#    - "4000:4000"
+#  links:
+#    - "postgres:postgres"
+#  working_dir: /src/
+#  command: /src/node_modules/.bin/gulp develop
+#  volumes:
+#    - ./web-dev/src:/src
+#  environment:
+#    RM3_PG: postgresql://wirehead:rm3test@postgres/rm3test
+#    RM3_RESOURCES: /src/scheme/default/static/
+
+
 postgres:
   image: postgres
   volumes_from:

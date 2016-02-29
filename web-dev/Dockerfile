@@ -11,9 +11,5 @@ RUN apt-get -y install librsvg2-dev postgresql-client-9.4 libpq5 libpq-dev
 RUN echo 'postgres:5432:*:wirehead:rm3test' > ~/.pgpass
 RUN chmod 0600 ~/.pgpass
 
-RUN mkdir /src
+RUN npm install gulp -g
 
-WORKDIR /src
-RUN npm install rm3
-
-ADD setup.sh setup.sh

@@ -1,5 +1,5 @@
 web:
-  build: ./web
+  image: rm3web/rm3
   ports:
     - "4000:4000"
   links:

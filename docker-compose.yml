@@ -1,13 +1,17 @@
 web:
   image: rm3web/rm3
+  volumes_from:
+    - blobs
   ports:
     - "4000:4000"
   links:
     - "postgres:postgres"
+    - "redis:redis"
   command: node /src/node_modules/.bin/rm3front
   environment:
     RM3_PG: postgresql://wirehead:rm3test@postgres/rm3test
     RM3_RESOURCES: /src/node_modules/rm3/scheme/default/static/
+    RM3_SESSION_REDIS: redis://redis:6379/0
 
 #web-dev:
 #  build: ./web-dev
@@ -23,6 +27,8 @@ web:
 #    RM3_PG: postgresql://wirehead:rm3test@postgres/rm3test
 #    RM3_RESOURCES: /src/scheme/default/static/
 
+redis:
+  image: redis
 
 postgres:
   image: postgres
@@ -37,4 +43,11 @@ data:
   image: postgres
   volumes:
     - /var/lib/postgresql
+  command: "true"
+
+blobs:
+  restart: always
+  image: rm3web/rm3
+  volumes:
+    - /src/node_modules/rm3/blobs/
   command: "true"

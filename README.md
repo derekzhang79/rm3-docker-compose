@@ -1,6 +1,9 @@
 rm3-docker-compose
 ===================
 
+[![rm3](https://img.shields.io/badge/rm3%20version-0.2.0-3F00FF.svg)](https://github.com/rm3web/rm3)
+
+
 What is it?
 -----------
 
@@ -26,14 +29,14 @@ What containers are running?
 ----------------------------
 
  - `web`: a container running the httpd server, exposed as port 4000
- - `postgres`: a container running postgres, linked to web
+ - `redis`: a container running the redis cache, linked to web as `redis`
+ - `postgres`: a container running postgres, linked to web as `postgres`
  - `data`: A container to hold the storage volume so it persists across restarts of `postgres`
 
 How to get started?
 -------------------
 
 - Set up
-  - Build the containers: `docker-compose build`
   - Start up the stack of containers: `docker-compose start postgres`
   - Wait a few minutes for postgres to get started up.
   - Run the setup: `docker-compose run web /src/setup.sh`

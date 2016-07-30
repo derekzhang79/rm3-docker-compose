@@ -1,9 +1,6 @@
 rm3-docker-compose
 ===================
 
-[![rm3](https://img.shields.io/badge/rm3%20version-0.2.1-3F00FF.svg)](https://github.com/rm3web/rm3)
-
-
 What is it?
 -----------
 

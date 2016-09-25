@@ -12,6 +12,7 @@ web:
     RM3_PG: postgresql://wirehead:rm3test@postgres/rm3test
     RM3_RESOURCES: /src/node_modules/rm3/scheme/default/static/
     RM3_SESSION_REDIS: redis://redis:6379/0
+    RM3_CACHE_REDIS: redis://redis:6379/0
 
 #web-dev:
 #  build: ./web-dev
